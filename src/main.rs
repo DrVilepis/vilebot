@@ -28,16 +28,6 @@ impl EventHandler for Handler {
                 println!("Error sending message: {:?}", why);
             }
         }
-
-
-        if msg.content.contains("jasper") {
-            if let Err(why) = msg.channel_id.say(&ctx.http,"Did I hear Jasper?").await {
-                println!("Error sending message: {:?}", why);
-            }
-            if let Err(why) = msg.channel_id.say(&ctx.http,"https://cdn.discordapp.com/attachments/754054932491010148/840695744587497482/Blobfish-ugly-470.png").await {
-                println!("Error sending message: {:?}", why);
-            }
-        }
     }
     async fn ready(&self, _: Context, ready: Ready) {
         println!("{} is connected!", ready.user.name);
